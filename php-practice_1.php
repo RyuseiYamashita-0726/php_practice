@@ -85,14 +85,63 @@ foreach($capitalcity as $pre => $city){
 
 // Q10 関数-1
 
+function hello($name){
+    echo $name."さん、こんにちは。\n";
+}
+
+hello('金谷');
+hello('安藤');
 
 // Q11 関数-2
 
+$price = 1000 ;
+
+function calcTaxinPrice($price){
+    return $price * 1.1 ;
+}
+
+$taxInprice = calcTaxinPrice($price);
+echo "{$price}円の商品の税込価格は{$taxInprice}円です";
 
 // Q12 関数とif文
 
+$num = 3 ;
+
+function distinguishNum($num){
+    return $num % 2;
+}
+
+$result = distinguishNum($num);
+
+if($result == 0){
+    echo "{$num}は偶数です。";    
+}else{
+    echo "{$num}は奇数です。";
+}
 
 // Q13 関数とswitch文
 
+function evaluateGrade($result){
+    
+    switch($result){
+        case 'A':
+        case 'B':
+            echo "合格です。\n";
+            break;
+            
+        case 'C':
+            echo "合格ですが問題があります。\n";
+            break;
+            
+        case 'D':
+            echo "不合格です。\n";
+            break;
+            
+        default:
+            echo "判定不明です。講師に問い合わせてください。\n";
+    }
+}
 
+evaluateGrade('A');
+evaluateGrade('F');
 ?>
