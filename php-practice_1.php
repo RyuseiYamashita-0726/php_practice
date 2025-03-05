@@ -67,7 +67,21 @@ if(in_array($input,$capitalcity)){
 }
 
 // Q9 連想配列-3
+$capitalcity = ['東京都' => '新宿区', '神奈川県' => '横浜市',
+                '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市',
+                '群馬県' => '前橋市', '茨城県' => '水戸市', '愛知県' => '名古屋市', 
+                '大阪府' => '大阪市' ];
+            
+$keys = array_keys($capitalcity);
+$input = '新宿区';
 
+foreach($capitalcity as $pre => $city){
+    if($pre != '愛知県' && $pre != '大阪府'){
+        echo "{$pre}"."の県庁所在地は"."{$city}です。\n";
+    }else{
+        echo "{$pre}"."は県庁所在地ではありません。\n";
+    }
+}
 
 // Q10 関数-1
 
