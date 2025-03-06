@@ -67,10 +67,70 @@ var_dump($personalInfos);
 
 
 // Q3 オブジェクト-1
+class Student
+{
+    public $studentId;
+    public $studentName;
 
+    public function __construct($id, $name)
+    {
+        $this->studentId = $id;
+        $this->studentName = $name;
+    }
+
+    public function attend()
+    {
+        
+        echo "学籍番号{this->$studentId}番の生徒は{this->$studentName}です。";
+    }
+}
+
+$yamada = new Student(120,'山田');
+$yamada->attend();
 
 // Q4 オブジェクト-2
+class Student
+{
+    public $studentId;
+    public $studentName;
+
+    public function __construct($id, $name)
+    {
+        $this->studentId = $id;
+        $this->studentName = $name;
+    }
+
+    public function attend($language)
+    {
+        
+        echo "{$this->studentName}は{$language}の授業に参加しました。学籍番号:{$this->studentId}";
+    }
+}
+
+$yamada = new Student(120,'山田');
+$yamada -> attend('PHP');
 
 
 // Q5 定義済みクラス
+
+//問題1
+
+$date = new DateTime();
+
+$date -> modify('-1 month');
+echo $date -> format('Y-m-d');
+
+//問題2
+
+$date1 = new DateTime('now');
+
+$date2 = new DateTime('1992-4-25');
+
+$diff = $date1 -> diff($date2);
+
+echo "あの日から{$diff -> days}日経過しました";
+
+
+
+
 ?>
